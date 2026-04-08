@@ -298,8 +298,12 @@
   font-size: 1.3rem;
 }
 
-}
   }
+  .btn-primary {
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
 </style>
 </head>
 <body>
@@ -450,7 +454,7 @@
     <p class="promise-sub">Driven by passion. United by purpose. · SCEC Elections 2026–27 · BML Munjal University</p>
     <p class="promise-name">B R Kaustubh · Events Secretary</p>
     <br><br>
-  <button onclick="window.location.href='mailto:br.kaustubh.24bbl@bmu.edu.in'" class="btn-primary">
+  <button onclick="sendMail()" class="btn-primary">
   Get in Touch
 </button>
   </div>
@@ -494,6 +498,11 @@
       btn.classList.remove('show');
     }
   });
+</script>
+  <script>
+function sendMail() {
+  window.location.href = "mailto:br.kaustubh.24bbl@bmu.edu.in";
+}
 </script>
 </body>
 </html>
