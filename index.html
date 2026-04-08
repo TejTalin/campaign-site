@@ -6,30 +6,30 @@
 <title>B R Kaustubh — Events Secretary SCEC 2026–27</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  .whatsapp-btn {
+.whatsapp-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 16px;
   right: 16px;
-  background: #A67C52; /* matches your poster theme */
+  background: #A67C52;
   color: #fff;
-  padding: 0.85rem 1.5rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.75rem;
   border-radius: 40px;
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  z-index: 10;
-  transition: all 0.25s ease;
-    .whatsapp-btn {
-  bottom: 12px;
-}
+  z-index: 999;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
-.whatsapp-btn:hover {
-  background: #8B5E3C;
-  transform: translateY(-2px);
+.whatsapp-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 }
 @media (max-width: 768px) {
 .hero-role {
@@ -78,11 +78,11 @@
 }
 
 }
-.whatsapp-btn {
-  bottom: 16px;
-  right: 16px;
-  font-size: 0.75rem;
-  padding: 0.7rem 1.2rem;
+..whatsapp-btn {
+  bottom: 5px;
+  right: 10px;
+  scale: 0.9;
+
 }
 }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -506,5 +506,16 @@
   <a href="https://chat.whatsapp.com/HCdOdQbJ2ak5sUCw9uw9xY?mode=gi_t" target="_blank" class="whatsapp-btn">
   Join the Campaign →
 </a>
+  <script>
+  const btn = document.querySelector('.whatsapp-btn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.7) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
 </body>
 </html>
